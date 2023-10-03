@@ -1,8 +1,6 @@
 package exercise;
 
-import java.util.Arrays;
 import java.util.ArrayList;
-import java.util.List;
 
 // BEGIN
 public class App {
@@ -15,7 +13,7 @@ public class App {
         }
 
         for (char a: word.toCharArray()) {
-            if (symbolsList.contains(a)){
+            if (symbolsList.contains(a)) {
                 symbolsList.remove(Character.valueOf(a));
             } else {
                 return false;
