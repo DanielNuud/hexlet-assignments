@@ -29,10 +29,8 @@ public class App {
         }
 
         StringBuilder result = new StringBuilder();
-
         int i = 0;
         result.append("{\n");
-
         for (Map.Entry<String, Integer> entry : wordsCount.entrySet()) {
             result.append(entry.getKey()).append(" = ").append(entry.getValue());
             if (i < wordsCount.size() - 1){
