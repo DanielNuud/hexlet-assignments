@@ -32,7 +32,7 @@ public class App {
         int i = 0;
         result.append("{\n");
         for (Map.Entry<String, Integer> entry : wordsCount.entrySet()) {
-            result.append(entry.getKey()).append(" = ").append(entry.getValue());
+            result.append("  ").append(entry.getKey()).append(": ").append(entry.getValue());
             if (i < wordsCount.size() - 1) {
                 result.append("\n");
             } else {
@@ -43,4 +43,8 @@ public class App {
         return result.toString();
     }
 }
+
+    public static void main(String[] args){
+
+    }
 //END
