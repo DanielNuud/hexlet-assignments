@@ -43,8 +43,4 @@ public class App {
         return result.toString();
     }
 }
-
-    public static void main(String[] args){
-
-    }
 //END
