@@ -6,12 +6,12 @@ import java.util.Map;
 // BEGIN
 public class App {
 
-    public static Map<String, Integer> getWordsCount(String sentence) {
+    public static Map<String, Integer> getWordCount(String sentence) {
 
         String[] words = sentence.split(" ");
         Map<String, Integer> map = new HashMap<>();
 
-        if (sentence.isEmpty()){
+        if (sentence.isEmpty()) {
             return map;
         }
 
@@ -24,7 +24,7 @@ public class App {
 
     public static String toString(Map<String, Integer> wordsCount) {
 
-        if (wordsCount.isEmpty()){
+        if (wordsCount.isEmpty()) {
             return "{}";
         }
 
@@ -33,7 +33,7 @@ public class App {
         result.append("{\n");
         for (Map.Entry<String, Integer> entry : wordsCount.entrySet()) {
             result.append(entry.getKey()).append(" = ").append(entry.getValue());
-            if (i < wordsCount.size() - 1){
+            if (i < wordsCount.size() - 1) {
                 result.append("\n");
             } else {
                 result.append("\n}");
