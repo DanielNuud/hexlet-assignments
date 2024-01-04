@@ -22,6 +22,7 @@ dependencies {
     // BEGIN
     implementation("io.javalin:javalin:5.6.3")
     implementation("io.javalin:javalin-rendering:5.6.0")
+    implementation("gg.jte:jte:3.0.1")
     // END
     implementation("org.slf4j:slf4j-simple:2.0.7")
     testImplementation(platform("org.junit:junit-bom:5.9.1"))

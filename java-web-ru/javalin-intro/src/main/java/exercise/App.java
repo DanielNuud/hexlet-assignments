@@ -9,13 +9,9 @@ public final class App {
     public static Javalin getApp() {
 
         // BEGIN
-        var app = Javalin.create(config -> {
+        return Javalin.create(config -> {
             config.plugins.enableDevLogging();
-        });
-
-        app.get("/", ctx -> ctx.result("Welcome to Hexlet!"));
-
-        return app;
+        }).get("/welcome", ctx -> ctx.result("Welcome to Hexlet!"));
         // END
     }
 
