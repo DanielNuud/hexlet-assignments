@@ -1,19 +1,13 @@
 package exercise.controller;
 
 import java.util.Collections;
-import java.util.Optional;
-
 import exercise.dto.MainPage;
 import exercise.dto.LoginPage;
-import exercise.model.User;
 import exercise.repository.UsersRepository;
-import static exercise.util.Security.encrypt;
-
 import exercise.util.NamedRoutes;
 import exercise.util.Security;
 import io.javalin.http.Context;
-import io.javalin.validation.ValidationException;
-import org.checkerframework.checker.units.qual.C;
+
 
 public class SessionsController {
 
