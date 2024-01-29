@@ -25,9 +25,10 @@ public class SessionsController {
 
         if (user != null && user.getPassword().equals(encryptedPass)) {
             ctx.sessionAttribute("currentUser", username);
-            ctx.redirect(NamedRoutes.rootPath());
+            ctx.status(302).redirect(NamedRoutes.rootPath());
         } else {
             var page = new LoginPage(username, "Wrong username or password");
+            ctx.status(401);
             ctx.render("build.jte", Collections.singletonMap("page", page));
         }
     }
