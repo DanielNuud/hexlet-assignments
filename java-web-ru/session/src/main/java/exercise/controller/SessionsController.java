@@ -5,8 +5,9 @@ import exercise.dto.MainPage;
 import exercise.dto.LoginPage;
 import exercise.repository.UsersRepository;
 import exercise.util.NamedRoutes;
-import exercise.util.Security;
 import io.javalin.http.Context;
+
+import static exercise.util.Security.encrypt;
 
 
 public class SessionsController {
@@ -18,17 +19,16 @@ public class SessionsController {
     }
 
     public static void login(Context ctx) {
-        var username = ctx.formParam("username");
+        var username = ctx.formParam("name");
         var password = ctx.formParam("password");
-        var encryptedPass = Security.encrypt(password);
         var user = UsersRepository.findByName(username);
 
-        if (user != null && user.getPassword().equals(encryptedPass)) {
+        if (user != null && user.getPassword().equals(encrypt(password))) {
             ctx.sessionAttribute("currentUser", username);
-            ctx.status(302).redirect(NamedRoutes.rootPath());
+            ctx.redirect(NamedRoutes.rootPath());
         } else {
-            var page = new LoginPage(username, "Wrong username or password");
-            ctx.status(401);
+            var errorMessage = "Wrong username or password";
+            var page = new LoginPage(username, errorMessage);
             ctx.render("build.jte", Collections.singletonMap("page", page));
         }
     }
